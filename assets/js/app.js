@@ -740,37 +740,64 @@ tiltCards.forEach((card) => {
 })();
 
 
-// Contact form submission via mailto
+// Contact form submission via PHPMailer (AJAX)
 (() => {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
   const statusEl = form.querySelector('.form-status');
-  const to = 'josue@visioners.media';
+  const btn = form.querySelector('button[type="submit"]');
 
-  function escape(s) {
-    return encodeURIComponent(s || '').replace(/%20/g, '+');
-  }
-
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    const name = data.get('name');
-    const email = data.get('email');
-    const company = data.get('company');
-    const city = data.get('city');
-    const message = data.get('message');
-
-    if (!email || !message) {
-      statusEl.textContent = 'Please provide a valid email and message.';
+    statusEl.textContent = '';
+    statusEl.style.color = 'var(--text)'; // Reset color
+    
+    // Basic frontend validation
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    
+    if (!data.name || !data.email || !data.message) {
+      statusEl.textContent = 'Please fill in all required fields.';
+      statusEl.style.color = '#ff4d4f';
       return;
     }
 
-    const subject = `Visioners Contact — ${escape(name)} (${escape(company || '')})`;
-    const body = `From: ${escape(name)}%0AEmail: ${escape(email)}%0AChurch/Org: ${escape(company || '')}%0ACity: ${escape(city || '')}%0A%0AMessage:%0A${escape(message)}%0A`;
+    // UI Loading state
+    const originalBtnText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    statusEl.textContent = 'Opening your email client...';
+    try {
+      const response = await fetch('send_mail.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        statusEl.textContent = 'Message sent successfully!';
+        statusEl.style.color = '#34a853';
+        form.reset();
+        setTimeout(() => {
+            statusEl.textContent = '';
+        }, 5000);
+      } else {
+        throw new Error(result.message || 'Unknown error occurred.');
+      }
+    } catch (error) {
+      console.error('Mail Error:', error);
+      statusEl.textContent = error.message || 'Failed to send message. Please try again later.';
+      statusEl.style.color = '#ff4d4f';
+    } finally {
+      btn.textContent = originalBtnText;
+      btn.disabled = false;
+    }
   });
 })();
 

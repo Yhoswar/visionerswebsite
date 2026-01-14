@@ -1205,8 +1205,7 @@ small,
 .gallery-col:nth-child(3) { height: 600px; }
 .gallery-col:nth-child(4) { height: 660px; }
 .gallery-col:nth-child(5) { height: 600px; }
-.gallery-col .col-inner { display: flex; flex-direction: column; will-change: transform; }
-.gallery-col .col-inner .tile { margin-bottom: 12px; }
+.gallery-col .col-inner { display: flex; flex-direction: column; gap: 12px; will-change: transform; }
 .gallery-col.up .col-inner {
   animation: marqueeUp 20s linear infinite;
 }
@@ -1373,8 +1372,10 @@ small,
   .gallery-columns .gallery-col:nth-child(2),
   .gallery-columns .gallery-col:nth-child(5) { display: none; }
   /* Consistent bottom spacing inside each column */
-  /* padding-bottom removed to fix marquee loop math */
-
+  .gallery-col .col-inner { padding-bottom: 12px; }
+  /* Lower the bottom horizon for column 3 to match column 4 */
+  .gallery-columns .gallery-col:nth-child(3) .col-inner { padding-bottom: 0; margin-bottom: -12px; }
+}
 
 /* Contact section */
 .contact { position: relative; padding: 72px 0; background: radial-gradient(1200px 380px at 50% 20%, rgba(0,0,0,0.55), rgba(0,0,0,0.85)); }
