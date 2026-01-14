@@ -1,0 +1,19 @@
+/* Booking modal (Visioners-specific classes to avoid Bootstrap collisions) */
+.vs-modal.hidden { display: none; }
+.vs-modal { position: fixed; inset: 0; z-index: 1000; }
+.vs-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(2px); }
+.vs-modal-content { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(900px, 92vw); height: min(620px, 80vh); background: var(--card, #0b0d13); border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05) inset; overflow: hidden; }
+.vs-modal-close { position: absolute; right: 12px; top: 12px; width: 36px; height: 36px; border-radius: 8px; border: none; background: rgba(255,255,255,0.06); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; z-index: 2; }
+.vs-modal-close:hover { background: rgba(255,255,255,0.12); }
+.vs-modal-content iframe { width: 100%; height: 100%; border: 0; position: relative; z-index: 1; }
+
+/* Case study content */
+.case-content { padding: 16px 20px; height: 100%; overflow-y: auto; }
+.case-content h2 { margin: 0 0 8px; font-size: 1.4rem; font-weight: 600; }
+.case-content .meta { color: var(--muted); margin-bottom: 12px; font-size: 0.95rem; }
+.case-content p { margin: 10px 0; line-height: 1.6; color: var(--muted); }
+.case-content img { width: 100%; height: auto; border-radius: 8px; margin: 12px 0; display: block; }
+
+@media (max-width: 640px) {
+  .vs-modal-content { width: 96vw; height: 78vh; border-radius: 12px; }
+}

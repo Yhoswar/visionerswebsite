@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <radialGradient id="sun" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ff9f1c"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" rx="24" fill="#0b0b0b"/>
+  <!-- Sun glow -->
+  <circle cx="800" cy="240" r="220" fill="url(#sun)" opacity="0.45"/>
+  <!-- Dove -->
+  <path d="M600,520 C760,520 860,440 900,360 C900,360 880,520 1080,560 C980,560 920,620 820,620 C740,620 680,600 640,560 C620,540 600,520 600,520 Z" fill="#ffffff"/>
+  <!-- Rays -->
+  <g stroke="#ffffff" opacity="0.7">
+    <line x1="800" y1="240" x2="800" y2="80" stroke-width="6"/>
+    <line x1="800" y1="240" x2="980" y2="120" stroke-width="5"/>
+    <line x1="800" y1="240" x2="620" y2="120" stroke-width="5"/>
+  </g>
+  <text x="50%" y="860" fill="#c9c9c9" font-family="Inter, system-ui, -apple-system" font-size="28" text-anchor="middle">Dove & Rays</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="accent4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c5cff"/>
+      <stop offset="100%" stop-color="#2e76ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" rx="24" fill="#0b0b0b"/>
+  <!-- Open Bible -->
+  <path d="M200,620 C200,520 280,480 380,480 L380,780 C280,780 200,740 200,620 Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M600,620 C600,520 520,480 420,480 L420,780 C520,780 600,740 600,620 Z" fill="#ffffff" opacity="0.95"/>
+  <rect x="388" y="480" width="24" height="300" fill="#131313"/>
+  <!-- Bookmark -->
+  <polygon points="412,480 452,480 432,680" fill="url(#accent4)"/>
+  <!-- Title -->
+  <text x="50%" y="920" fill="#c9c9c9" font-family="Inter, system-ui, -apple-system" font-size="28" text-anchor="middle">Open Bible</text>
+</svg>

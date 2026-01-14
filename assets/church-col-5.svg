@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="100%" stop-color="#ffd166"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="24" fill="#0b0b0b"/>
+  <!-- Community abstract hands forming a heart -->
+  <path d="M800,560 C900,480 980,420 1040,480 C1100,540 1000,660 800,760 C600,660 500,540 560,480 C620,420 700,480 800,560 Z" fill="url(#heartGrad)" opacity="0.85"/>
+  <g fill="#ffffff" opacity="0.9">
+    <rect x="520" y="500" width="80" height="180" rx="20"/>
+    <rect x="1000" y="500" width="80" height="180" rx="20"/>
+  </g>
+  <text x="50%" y="860" fill="#c9c9c9" font-family="Inter, system-ui, -apple-system" font-size="28" text-anchor="middle">Community Heart</text>
+</svg>

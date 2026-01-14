@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visioners">
+  <!-- Monogram V -->
+  <path d="M10 6 L20 26 L30 6" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Accent star -->
+  <path d="M40 14.5 l3.2 0 l1 -3.2 l1 3.2 l3.2 0 l-2.6 1.9 l1 3.2 l-2.6 -1.9 l-2.6 1.9 l1 -3.2 Z" fill="#7C5CFF" />
+  <!-- Wordmark -->
+  <text x="52" y="22" fill="#FFFFFF" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial" font-size="14" font-weight="800" letter-spacing="0.08em">VISIONERS</text>
+</svg>
