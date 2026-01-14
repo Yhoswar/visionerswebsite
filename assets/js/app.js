@@ -60,7 +60,7 @@ const fadeObserver = new IntersectionObserver(
       }
     });
   },
-  { 
+  {
     threshold: 0.08,
     rootMargin: '0px 0px -30px 0px'
   }
@@ -379,28 +379,28 @@ function onScroll() {
         const line = timelineEl.querySelector('.timeline-line');
         if (line) {
           const vh = window.innerHeight || 800;
-          const thresholdY = vh * (2/3); // tercio inferior del viewport
+          const thresholdY = vh * (2 / 3); // tercio inferior del viewport
           const steps = Array.from(timelineEl.querySelectorAll('.timeline-steps .tstep'));
 
           const currentY = window.scrollY || document.documentElement.scrollTop || 0;
-           const prevY = parseFloat(timelineEl.dataset.lastY || '0');
-           const isDown = currentY > prevY;
-           timelineEl.dataset.lastY = String(currentY);
+          const prevY = parseFloat(timelineEl.dataset.lastY || '0');
+          const isDown = currentY > prevY;
+          timelineEl.dataset.lastY = String(currentY);
 
-           if (isDown) {
-             for (const step of steps) {
-               if (step.classList.contains('step-visible')) continue;
-               const rect = step.getBoundingClientRect();
-               const centerY = rect.top + rect.height * 0.5;
-               if (centerY <= thresholdY) {
-                 step.classList.add('step-visible');
-                 // spark pulse feedback when a step is revealed
-                 timelineEl.classList.add('spark-pulse');
-                 setTimeout(() => timelineEl.classList.remove('spark-pulse'), 420);
-                 break; // revela solo uno por tick de scroll hacia abajo
-               }
-             }
-           }
+          if (isDown) {
+            for (const step of steps) {
+              if (step.classList.contains('step-visible')) continue;
+              const rect = step.getBoundingClientRect();
+              const centerY = rect.top + rect.height * 0.5;
+              if (centerY <= thresholdY) {
+                step.classList.add('step-visible');
+                // spark pulse feedback when a step is revealed
+                timelineEl.classList.add('spark-pulse');
+                setTimeout(() => timelineEl.classList.remove('spark-pulse'), 420);
+                break; // revela solo uno por tick de scroll hacia abajo
+              }
+            }
+          }
         }
       }
 
@@ -726,7 +726,7 @@ tiltCards.forEach((card) => {
 })();
 
 // Gallery: duplicate items for seamless CSS animation looping
-(function() {
+(function () {
   const gallery = document.querySelector('.gallery');
   if (!gallery) return;
 
@@ -775,7 +775,7 @@ tiltCards.forEach((card) => {
 })();
 
 // Contact under-gallery marquee control
-(function(){
+(function () {
   const gallery = document.querySelector('#contact-gallery');
   if (!gallery) return;
   const rows = gallery.querySelectorAll('.hline');
@@ -850,25 +850,25 @@ tiltCards.forEach((card) => {
       quote: `Visioners Media has provided invaluable support to our creative team here at Ministry Pass. We love the quality of service, ease of collaboration, and timeliness of delivery Josue and his team provide. Can't say enough about this group--they're great!`,
       name: 'Zodwa Ndlovu',
       role: 'MinistryPass, Content Director',
-      avatar: '/assets/Testimmonies/Zodwa.webp'
+      avatar: 'assets/img/testimonials/Zodwa.webp'
     },
     {
       quote: `Josué and the team at Visioners have been super helpful in helping us convert content to Canva. My team didn’t just want someone who knew Canva, but needed someone with a great eye for design to make the right decisions when it came to making a Photoshop file still look great within the confines of what Canva can do. Great team. Responsive. Excellent.`,
       name: 'Jonathan Malm',
       role: 'Founder, SundaySocial.tv',
-      avatar: '/assets/Testimmonies/Jonathan.webp'
+      avatar: 'assets/img/testimonials/Jonathan.webp'
     },
     {
       quote: `Working with Josue and the Visioners Media team has been amazing. They transformed how we convert Photoshop graphics to Canva—fast, precise, and efficient. Their communication is excellent, always responsive and professional. Visioners has become one of our most valued partners, and we look forward to continuing our collaboration!`,
       name: 'Thomas Seinbert',
       role: 'Founder, Church Design Lab',
-      avatar: '/assets/Testimmonies/Thomas-scaled.webp'
+      avatar: 'assets/img/testimonials/Thomas-scaled.webp'
     },
     {
       quote: `Josué and the team at Visioners Media have been a great partner with us at Nucleus Media. We needed fully editable templates and designs that we could distribute to the thousands of churches that use our service. And they’ve always been up for the challenge.`,
       name: 'Brady Shearer',
       role: 'Founder & CEO of Nucleus',
-      avatar: '/assets/Testimmonies/Brady.webp'
+      avatar: 'assets/img/testimonials/Brady.webp'
     }
   ];
 
