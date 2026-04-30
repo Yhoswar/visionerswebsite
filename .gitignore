@@ -2,3 +2,5 @@ config.php
 .vscode/
 .DS_Store
 Thumbs.db
+desktop.ini
+local.htaccess
